@@ -3,12 +3,12 @@ import {
   SegmentDetails,
 } from "./components/FlightCard/FlightCard";
 
-export const getFlightsData = (data) => {
-  const flights = [];
+export const getFlightsData = (data: any) => {
+  const flights: any = [];
 
-  data.result.flights.forEach((flight) => {
-    flight.flight.legs.forEach((leg) => {
-      leg.segments[0].forEach((segment) => {
+  data.result.flights.forEach((flight: any) => {
+    flight.flight.legs.forEach((leg: any) => {
+      leg.segments[0].forEach((segment: any) => {
         flights.push({
           carrier: flight.flight.carrier.caption,
           price: parseFloat(
@@ -30,16 +30,12 @@ export const getFlightsData = (data) => {
   return flights;
 };
 
-interface Leg {
-  segments: SegmentDetails[];
-}
-
 export const sortFlights = (flights: FlightDetails[], sortBy: string) => {
   switch (sortBy) {
     case "ascending":
-      return flights.sort((a, b) => a.price - b.price);
+      return flights.sort((a, b) => Number(a.price) - Number(b.price));
     case "descending":
-      return flights.sort((a, b) => b.price - a.price);
+      return flights.sort((a, b) => Number(b.price) - Number(a.price));
     case "flightDuration":
       return flights.sort(
         (a, b) =>
