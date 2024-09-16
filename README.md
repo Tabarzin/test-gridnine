@@ -1,5 +1,7 @@
 # Тестовое задание для компании Gridnine
 
+Деплой: https://flourishing-stardust-7a3670.netlify.app/
+
 ## Развернуть локально:
 
 ```
