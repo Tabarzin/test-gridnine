@@ -1,7 +1,4 @@
-import {
-  FlightDetails,
-  SegmentDetails,
-} from "./components/FlightCard/FlightCard";
+import { FlightDetails } from "./components/FlightCard/FlightCard";
 
 export const getFlightsData = (data: any) => {
   const flights: any = [];
